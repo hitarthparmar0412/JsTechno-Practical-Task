@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jstechno_practical_task/screen/register_screen.dart';
 import 'package:jstechno_practical_task/screen/verification_screen.dart';
+import 'package:jstechno_practical_task/utility/app_assets.dart';
 import 'package:jstechno_practical_task/widget/app_text_field.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
@@ -37,8 +38,8 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(height: 40),
               Container(
                 padding: const EdgeInsets.all(20),
-                child: Image.network(
-                  'https://static.vecteezy.com/system/resources/previews/005/879/539/original/cloud-computing-modern-flat-concept-for-web-banner-design-man-enters-password-and-login-to-access-cloud-storage-for-uploading-and-processing-files-illustration-with-isolated-people-scene-free-vector.jpg',
+                child: Image.asset(
+                  AppAssets.logo,
                   fit: BoxFit.cover,
                 ),
               ),
