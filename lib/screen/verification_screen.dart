@@ -14,13 +14,7 @@ class VerificationScreen extends StatefulWidget {
 
 class _VerificationScreenState extends State<VerificationScreen> {
   final _formKey = GlobalKey<FormState>();
-  TextEditingController verificationController = TextEditingController();
-
-  _notify() {
-    if (mounted) {
-      setState(() {});
-    }
-  }
+  final verificationController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {

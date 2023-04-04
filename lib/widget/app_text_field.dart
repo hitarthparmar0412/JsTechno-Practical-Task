@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class AppTextField extends StatelessWidget {
   const AppTextField({
@@ -15,8 +14,6 @@ class AppTextField extends StatelessWidget {
     this.textAlign,
     this.prefixText,
     this.textInputAction,
-    this.focusBorder,
-    this.enableBorder,
     this.maxLines,
     this.hintDecoration,
     this.suffixText,
@@ -51,8 +48,7 @@ class AppTextField extends StatelessWidget {
   final TextAlign? textAlign;
   final String? prefixText;
   final TextInputAction? textInputAction;
-  final InputBorder? focusBorder;
-  final InputBorder? enableBorder;
+
   final int? maxLines;
   final TextDecoration? hintDecoration;
   final String? suffixText;
@@ -83,21 +79,21 @@ class AppTextField extends StatelessWidget {
       child: Padding(
         padding: padding ?? const EdgeInsets.symmetric(horizontal: 15),
         child: TextFormField(
-          inputFormatters: inputFormatters,
-          maxLength: maxLength,
-          textAlignVertical: TextAlignVertical.center,
-          validator: validator,
-          onChanged: onChanged,
-          style: inputTextStyle,
-          obscureText: obscureText ?? false,
-          enabled: (onTap != null) ? false : enabled,
-          keyboardType: keyboardType,
-          textInputAction: textInputAction,
-          textAlign: textAlign ?? TextAlign.start,
-          controller: controller,
-          maxLines: maxLines,
-          focusNode: focusNode,
-          decoration: InputDecoration(
+            inputFormatters: inputFormatters,
+            maxLength: maxLength,
+            textAlignVertical: TextAlignVertical.center,
+            validator: validator,
+            onChanged: onChanged,
+            style: inputTextStyle,
+            obscureText: obscureText ?? false,
+            enabled: (onTap != null) ? false : enabled,
+            keyboardType: keyboardType,
+            textInputAction: textInputAction,
+            textAlign: textAlign ?? TextAlign.start,
+            controller: controller,
+            maxLines: maxLines,
+            focusNode: focusNode,
+            decoration: InputDecoration(
               counterStyle: counterStyle,
               prefixIcon: preffixIcon,
               suffixIcon: suffixIcon,
@@ -122,12 +118,10 @@ class AppTextField extends StatelessWidget {
               hintText: hintText,
               suffixText: suffixText,
               hintStyle: hintStyle ??
-                  GoogleFonts.oxygen(
-                    textStyle: const TextStyle(
-                      color: Colors.grey,
-                    ),
-                  )),
-        ),
+                  const TextStyle(
+                    color: Colors.grey,
+                  ),
+            )),
       ),
     );
   }

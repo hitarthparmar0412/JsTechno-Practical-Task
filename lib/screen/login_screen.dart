@@ -16,14 +16,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   TextEditingController numberController = TextEditingController();
-  ValueNotifier<bool> isLoading = ValueNotifier<bool>(false);
   final _formKey = GlobalKey<FormState>();
-
-  @override
-  void dispose() {
-    numberController.clear();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -86,7 +79,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     MaterialPageRoute(
                       builder: ((context) => const VerificationScreen()),
                     ),
-                  );
+                  ).then((value) => numberController.clear());
                 },
               ),
               const SizedBox(height: 20),

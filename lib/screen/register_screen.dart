@@ -17,7 +17,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final fullnameController = TextEditingController();
   final emailController = TextEditingController();
   final phonenumberController = TextEditingController();
-
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -71,21 +70,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     onChanged: (value) {},
                     controller: emailController,
                     validator: (value) {
-                      if (value == null || value.trim() == '' && !Utility.isValidEmail(value)) {
-                        return 'Enter a address';
+                      if (value == null || value.trim() == '' || !Utility.isValidEmail(value)) {
+                        return 'Enter a valid address';
                       }
                       return null;
                     },
-                    enableBorder: const UnderlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.grey,
-                      ),
-                    ),
-                    focusBorder: const UnderlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.blue,
-                      ),
-                    ),
                     hintText: 'Email Address',
                   ),
                   const SizedBox(height: 20),
